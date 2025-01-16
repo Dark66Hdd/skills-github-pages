@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'Accueil Modeleco</title>
+  <style>
+    /* Définition du style global de la page */
+    body {
+      font-family: Arial, sans-serif; /* Utilisation de la police Arial pour le texte */
+      background-image: url(./images/fe3.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex; /* Utilisation du modèle de mise en page flexbox */
+      justify-content: center; /* Centrage horizontal du contenu */
+      align-items: center; /* Centrage vertical du contenu */
+      height: 100vh; /* La hauteur de la page est de 100% de la fenêtre du navigateur */
+      margin: 0; /* Supprime les marges par défaut du navigateur */
+      flex-direction: column; /* Organise les éléments en colonne */
+    }
+
+    /* Positionnement du logo dans le coin supérieur */
+    .logo {
+      position: absolute;
+      top: 20px; /* Décalage du logo depuis le haut */
+      left: 20px; /* Décalage du logo depuis la gauche */
+      width: 40px; /* Taille réduite du logo */
+      height: 40px; /* Taille réduite du logo */
+    }
+
+    /* Style du titre principal dans une boîte blanche */
+    .title-box {
+      background-color: #fff; /* Fond blanc pour le titre */
+      padding: 20px; /* Espacement interne de 20px autour du texte */
+      text-align: center; /* Aligne le texte au centre */
+      border-radius: 10px; /* Coins arrondis de 10px */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère portée autour du titre */
+      margin-bottom: 40px; /* Marge sous le titre pour espacer des autres éléments */
+      border: 2px solid #4CAF50; /* Contour vert autour de la boîte du titre */
+    }
+
+    /* Style du titre principal */
+    h1 {
+      color: #333; /* Couleur du texte en gris foncé */
+      margin: 0; /* Retirer la marge par défaut */
+    }
+
+    /* Conteneur principal pour aligner les boîtes horizontalement */
+    .container {
+      display: flex; /* Utilisation de flexbox pour un alignement horizontal des éléments */
+      justify-content: space-between; /* Espacement égal entre chaque boîte */
+      width: 80%; /* Largeur de l'élément conteneur à 80% de la largeur de la fenêtre */
+      max-width: 900px; /* Largeur maximale de 900px */
+      margin-bottom: 40px; /* Marge inférieure pour espacer le conteneur des éléments en dessous */
+    }
+
+    /* Style de chaque boîte */
+    .box {
+      background-color: #fff; /* Fond blanc pour chaque boîte */
+      width: 200px; /* Largeur fixe de 200px */
+      height: 200px; /* Hauteur fixe de 200px */
+      margin: 10px; /* Espacement de 10px autour de chaque boîte */
+      padding: 20px; /* Espacement interne de 20px à l'intérieur des boîtes */
+      text-align: center; /* Aligne le texte au centre de la boîte */
+      border-radius: 10px; /* Coins arrondis de 10px pour une apparence plus douce */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère portée autour de la boîte pour l'effet de profondeur */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour l'effet de transformation et l'ombre */
+      border: 2px solid #4CAF50; /* Contour vert autour des boîtes */
+    }
+
+    /* Effet au survol de la boîte */
+    .box:hover {
+      transform: translateY(-10px); /* Déplace légèrement la boîte vers le haut lorsque l'on survole */
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Augmente l'ombre pour simuler un effet de "levée" au survol */
+    }
+
+    /* Style des titres à l'intérieur de chaque boîte */
+    .box h2 {
+      color: #555; /* Couleur du texte des titres en gris moyen */
+    }
+
+    /* Style des paragraphes à l'intérieur des boîtes */
+    .box p {
+      color: #777; /* Couleur du texte des paragraphes en gris clair */
+    }
+
+    /* Style du bouton */
+    .btn1, .btn2, .btn3, .btn4 {
+      background-color: #4CAF50; /* Couleur de fond du bouton */
+      color: white; /* Couleur du texte du bouton */
+      border: none; /* Supprime les bordures par défaut du bouton */
+      padding: 15px 32px; /* Espacement interne (haut/bas et gauche/droite) du bouton */
+      text-align: center; /* Aligne le texte au centre du bouton */
+      text-decoration: none; /* Supprime les décorations de texte (comme le soulignement) */
+      display: inline-block; /* Permet au bouton de s'afficher en ligne tout en ayant des propriétés de bloc */
+      font-size: 16px; /* Taille de la police du texte */
+      margin-top: 20px; /* Marge au-dessus du bouton */
+      cursor: pointer; /* Change le curseur en pointeur lorsqu'on survole le bouton */
+      border-radius: 5px; /* Arrondit les coins du bouton */
+      transition: background-color 0.3s, transform 0.2s; /* Applique une transition pour les changements de couleur et de transformation */
+    }
+
+    /* Effet au survol du bouton */
+    .btn:hover {
+      background-color: #45a049; /* Change la couleur de fond lorsque la souris survole le bouton */
+      transform: scale(1.1); /* Agrandit légèrement le bouton lors du survol */
+    }
+
+    /* Effet lorsqu'on clique sur le bouton */
+    .btn:active {
+      background-color: #3e8e41; /* Change la couleur de fond lorsqu'on clique sur le bouton */
+      transform: scale(1); /* Rétablit la taille normale du bouton lorsqu'il est cliqué */
+    }
+
+    /* Conteneur pour les actualités défilantes */
+    .defilactu {
+      width: 100%;
+      overflow: hidden; /* Cache la partie qui dépasse */
+      background-color: #333; /* Fond sombre pour la zone des actualités */
+      color: white; /* Texte en blanc */
+      padding: 10px 0;
+      position: fixed; /* Fixe la position au bas de la page */
+      bottom: 0; /* Ancre au bas de la fenêtre */
+      left: 0; /* Aligne le conteneur à gauche */
+      z-index: 1000; /* Assure que la section soit au-dessus des autres éléments */
+    }
+
+    .gloactu {
+      display: flex;
+      flex-wrap: nowrap;
+      animation: scrollNews 30s linear infinite; /* Animation de défilement infini */
+    }
+
+    .actu {
+      padding: 0 60px; /* espace entre les textes */
+      white-space: nowrap; /* Empêche le texte de se couper */
+    }
+
+    /* Animation pour faire défiler le texte de droite à gauche */
+    @keyframes scrollNews {
+      0% {
+        transform: translateX(100%); /* Commence à la droite de l'écran */
+      }
+      100% {
+        transform: translateX(-100%); /* Défile complètement vers la gauche */
+      }
+    }
+
+    /* 5ème boîte rectangulaire réduite sous les 4 autres */
+.box-rect {
+  background-color: #fff; /* Fond blanc pour la nouvelle boîte */
+  width: 50%; /* Largeur réduite à 50% pour ne pas toucher les bords */
+  height: 60px; /* Hauteur réduite pour rendre la boîte plus petite */
+  margin-top: 25px; /* Marge au-dessus de la boîte */
+  padding: 10px; /* Réduction de l'espacement interne pour que le texte soit plus compact */
+  display: flex; /* Utilisation de Flexbox pour centrer le contenu */
+  justify-content: center; /* Centrage horizontal du texte */
+  align-items: center; /* Centrage vertical du texte */
+  text-align: center; /* Aligne le texte au centre */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la boîte */
+  border: 2px solid #4CAF50; /* Contour vert autour de la boîte */
+}
+
+/* Style du texte à l'intérieur de la boîte */
+.box-rect p {
+  color: #555; /* Couleur du texte assombrie (gris foncé) */
+  font-size: 16px; /* Taille du texte légèrement plus petite pour un look plus compact */
+  font-weight: 500; /* Légèrement en gras (valeur entre 400 et 700) */
+  font-style: italic; /* Applique l'italique au texte */
+  margin: 0; /* Suppression des marges pour un meilleur alignement */
+}
+  </style>
+</head>
+<body>
+  <!-- Logo SVG en haut à gauche -->
+  <div class="logo">
+    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cercle de fond -->
+      <circle cx="50" cy="50" r="45" fill="white" stroke="#4CAF50" stroke-width="5"/>
+      <!-- Feuille avec contour noir fin -->
+      <path d="M50 30 C60 40, 60 60, 50 70 C40 60, 40 40, 50 30 Z" fill="#4CAF50" stroke="black" stroke-width="1"/>
+      <!-- Traits blancs sur la feuille -->
+      <line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="40" x2="60" y2="50" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="40" x2="40" y2="50" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="55" x2="60" y2="60" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="55" x2="40" y2="60" stroke="white" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <!-- Ajout d'une boîte blanche autour du titre -->
+  <div class="title-box">
+    <h1>ModelEco</h1>
+  </div>
+
+  <div class="container">
+    <div class="box">
+      <h2>Le Projet</h2>
+      <p>Présentation du Projet de STI2D</p>
+      <!-- Lien ajouté autour du bouton -->
+      <a href="./page/projet.html" class="btn1">Découvrez</a>
+    </div>
+
+    <div class="box">
+      <h2>Les Tâches</h2>
+      <p>Les différentes Tâches de réalisation du Projet</p>
+      <!-- Lien ajouté autour du bouton -->
+      <a href="./page/lesdifferentestachesarealiser.html" class="btn2">Découvrez</a>
+    </div>
+
+    <div class="box">
+      <h2>Chiffres </h2>
+      <p>Du Lycée Jean de Lattre De Tassigny</p>
+      <!-- Lien ajouté autour du bouton -->
+      <a href="./page/chiffres.html" class="btn3">Découvrez</a>
+    </div>
+
+    <!-- Nouvelle boîte ajoutée -->
+    <div class="box">
+      <h2>Multimédia</h2>
+      <p>Interviews, photos et vidéos du Projet</p>
+      <!-- Lien ajouté autour du bouton -->
+      <a href="./page/category.html" class="btn4">Découvrez</a>
+    </div>
+  </div>
+
+  <!-- 5ème boîte rectangulaire ajoutée sous les 4 autres -->
+  <div class="box-rect">
+    <p>Voici l'un des 5 projets de la classe des Terminales STI2D 2024-2025. <br>Découvrez-le en appuyant sur l'icône de présentation du projet. </p>
+  </div>
+
+  <!-- Section des actualités défilantes -->
+  <div class="defilactu">
+    <div class="gloactu">
+      <div class="actu">📰 Lycée Jean de Lattre de Tassigny</div>
+      <div class="actu">📰 165 RUE HUBERT CAILLER 85021 LA ROCHE SUR YON CEDEX</div>
+      <div class="actu">📰 TEL: 02 51 62 63 00</div>
+      <div class="actu">📰 lycee.delattre@ac-nantes.fr</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const gloactu = document.querySelector('.gloactu');
+      const actu = document.querySelectorAll('.actu');
+      
+      // Ajoute une duplication des actualités pour un défilement infini
+      actu.forEach(item => {
+        const clonedItem = item.cloneNode(true); // Clone chaque élément
+        gloactu.appendChild(clonedItem); // Ajoute le clone dans le conteneur
+      });
+    });
+  </script>
+  
+</body>
+</html>
