@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Présentation de Projet</title>
+  
+  <style>
+  /* Reset de base */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Permet de ne pas inclure les bordures et le padding dans les dimensions des éléments */
+}
+
+/* Corps de la page */
+body {
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+  line-height: 1.6; /* Espacement des lignes pour améliorer la lisibilité */
+  color: #333; /* Couleur du texte */
+  background-color: #f9f9f9; /* Couleur de fond de la page */
+}
+
+/* =====================
+   En-tête
+   ===================== */
+.header {
+  background-color: 2px solid #4CAF50; /* Changement de couleur pour un gris foncé */
+  color: white; /* Couleur du texte dans l'en-tête */
+  padding: 100px 20px; /* Espacement autour du contenu */
+  text-align: center; /* Centrer le texte */
+  animation: fadeInHeader 2s ease-in-out; /* Animation d'apparition de l'en-tête */
+}
+
+.header h1 {
+  font-size: 3rem; /* Taille du titre principal */
+  margin-bottom: 10px; /* Espacement sous le titre */
+  animation: slideIn 1.5s ease-out; /* Animation de glissement du titre */
+}
+
+.header p {
+  font-size: 1.5rem; /* Taille du texte de description */
+  animation: fadeInText 2s ease-in-out; /* Animation de fondu pour la description */
+}
+
+/* Animation pour l'en-tête */
+@keyframes fadeInHeader {
+  from {
+    opacity: 0; /* Commence invisible */
+  }
+  to {
+    opacity: 1; /* Devient complètement visible */
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px); /* Commence 50px au-dessus */
+  }
+  to {
+    transform: translateY(0); /* Se déplace à sa position finale */
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0; /* Commence invisible */
+  }
+  to {
+    opacity: 1; /* Devient complètement visible */
+  }
+}
+
+/* Sections de contenu */
+section {
+  padding: 40px 20px; /* Espacement interne de chaque section */
+  margin-bottom: 30px; /* Espacement entre les sections */
+  background-color: white; /* Couleur de fond des sections */
+}
+
+/* Titres des sections (h2)*/
+h2 {
+  font-size: 2rem; /* Taille des titres de sections */
+  margin-bottom: 20px; /* Espacement sous les titres */
+  color: #333; /* Couleur du texte */
+  text-align: center; /* Centrage du texte */
+  animation: fadeIn 1s ease-in-out; /* Animation d'apparition des titres */
+}
+
+/* Container pour aligner le contenu */
+.container {
+  max-width: 1200px; /* Largeur maximale de la zone de contenu */
+  margin: 0 auto; /* Centrage horizontal */
+  padding: 0 20px; /* Espacement interne */
+}
+
+/* Objectifs du projet (section .goals) */
+.goals ul {
+  list-style: none; /* Supprime les puces des listes */
+  padding-left: 0; /* Enlève le padding à gauche */
+}
+
+.goals li {
+  font-size: 1.2rem; /* Taille de la police pour chaque objectif */
+  margin-bottom: 10px; /* Espacement sous chaque élément de la liste */
+}
+
+/* Budget et calendrier (sections .budget, .timeline) */
+.budget, .timeline {
+  margin-top: 20px; /* Espacement entre les sections budget et calendrier */
+}
+
+.budget h3, .timeline h3 {
+  font-size: 1.5rem; /* Taille du titre des sous-sections */
+  margin-bottom: 10px; /* Espacement sous chaque sous-titre */
+}
+
+.budget p, .timeline p {
+  font-size: 1.1rem; /* Taille du texte pour les paragraphes */
+}
+
+/* Formulaire d'ajout d'informations */
+.form-section input[type="text"] {
+  width: 70%; /* Largeur du champ de texte */
+  padding: 10px; /* Espacement interne du champ de texte */
+  font-size: 1rem; /* Taille du texte dans le champ */
+  border: 2px solid #4CAF50; /* Bordure verte */
+  border-radius: 5px; /* Coins arrondis */
+  margin-right: 10px; /* Espacement entre le champ de texte et le bouton */
+}
+
+.form-section button {
+  padding: 10px 20px; /* Espacement interne du bouton */
+  background-color: #4CAF50; /* Couleur de fond verte */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 1rem; /* Taille du texte du bouton */
+  cursor: pointer; /* Changement de curseur lors du survol */
+}
+
+.form-section button:hover {
+  background-color: #45a049; /* Changement de couleur au survol */
+}
+
+/* Liste d'informations ajoutées par l'utilisateur */
+#project-info-list {
+  margin-top: 20px; /* Espacement sous le formulaire */
+  list-style: none; /* Supprime les puces */
+  padding-left: 0; /* Enlève le padding à gauche */
+}
+
+#project-info-list li {
+  font-size: 1.1rem; /* Taille du texte de chaque élément ajouté */
+  margin: 5px 0; /* Espacement vertical entre chaque élément */
+}
+
+/* Footer */
+.footer {
+  background-color: #333; /* Couleur de fond du footer */
+  color: white; /* Couleur du texte du footer */
+  text-align: center; /* Centrage du texte */
+  padding: 20px 0; /* Espacement interne */
+}
+
+.footer p {
+  font-size: 1rem; /* Taille du texte dans le footer */
+}
+/* Section pour les vidéos */
+.video-section {
+  padding: 40px 20px; /* Espacement interne */
+  background-color: white; /* Fond blanc */
+  margin-bottom: 30px; /* Espacement entre les sections */
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between; /* Espace entre les vidéos */
+  gap: 20px; /* Espacement entre les cases des vidéos */
+}
+
+.video-box {
+  width: 30%; /* Chaque vidéo prendra 30% de la largeur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour les cases */
+  border-radius: 10px; /* Coins arrondis */
+  overflow: hidden; /* Cache les débordements */
+}
+
+.video-box iframe {
+  border: none; /* Pas de bordure autour des vidéos */
+  width: 100%; /* La vidéo prend toute la largeur de son conteneur */
+  height: 315px; /* Hauteur fixe pour chaque vidéo */
+}
+  </style>
+</head>
+<body>
+  <!-- En-tête avec image de fond et titre animé -->
+  <header class="header">
+    <div class="header-content">
+      <h1>Maquette Lycée</h1>
+      <p>Un projet maquette miniaturisée visant à sensibiliser l'écologie et l'économie.</p>
+    </div>
+  </header>
+
+  <!-- Section "À propos du projet" -->
+  <section class="about">
+    <div class="container">
+      <h2>À propos de ce projet</h2>
+      <p>Aujourd’hui en France, le coût de l’énergie pour un foyer est devenu un vrai souci, dû partiellement à l’augmentation du coût la vie en général. Notre planète va de moins en moins bien et est de plus en plus polluée provoquant un vrai problème <strong>écologique</strong>. C’est pour cela qu’il est impératif de <strong>sensibiliser</strong> au maximum les populations afin de réduire notre consommation ou utiliser les ressources autrement. Pour ce projet nous allons utiliser comme support la maquette du lycée.</p>
+    </div>
+  </section>
+
+  <!-- Section "Objectifs" -->
+  <section class="goals">
+    <div class="container">
+      <h2>Objectifs du projet</h2>
+      <ul>
+        <li>Modeleco est un projet qui a pour but de <strong>sensibiliser</strong> les élèves du lycée Delattre de Tassigny aux gestes d'éco-citoyenneté.
+			  Ce projet contient une maquette interactive et un site internet qui vous delivre des chiffres sur la consommation en energie du lycée et d'autres contenus multimédia.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section "Planning et Avenir" -->
+  <section class="budget-timeline">
+    <div class="container">
+      <h2>Planning et Avenir</h2>
+      <div class="budget">
+        <h3>Planning</h3>
+        <p>#</p>
+      </div>
+      <div class="timeline">
+        <h3>Pour l'avenir !</h3>
+        <p>Ce projet serait essentiel à la sensibilisation chez les jeunes et les générations futur sur les gestes et l'éco-citoyenneté en général. En effet nous voudrions que se projet permette une plus grande propagation de l'idée d"éco-citoyenneté". Nous esperons également que d'autres établissements mettent en place des projet similiraires au lycée Delattre via la présentation de la maquette.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section pour afficher les vidéos du projet -->
+<section class="video-section">
+  <div class="container">
+    <h2>Vidéos du projet</h2>
+    <div class="video-container">
+      <!-- Vidéo 1 -->
+      <div class="video-box">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VOTRE_VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <!-- Vidéo 2 -->
+      <div class="video-box">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VOTRE_VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <!-- Vidéo 3 -->
+      <div class="video-box">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hku_hGwwdcY" " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024-2025 Projet STI2D - Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script>
+
+  </script>
+</body>
+</html>

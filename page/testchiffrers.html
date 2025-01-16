@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Esthétique</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #43A047;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            padding: 12px 30px;
+            background: #2E7D32;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #66BB6A;
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-container button {
+            padding: 12px 25px;
+            background-color: #43A047;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 200px; /* Fixed width */
+        }
+
+        .button-container button:hover {
+            background-color: #66BB6A;
+            transform: scale(1.05);
+        }
+
+        .button-details {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .button-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        .button-details p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 1.1em;
+        }
+
+        th {
+            background-color: #43A047;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #e8f5e9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="https://example.com">Accueil</a>
+    </div>
+
+    <div class="button-container">
+        <button onclick="showContent(1)">
+            Bouton 1
+            <div class="button-details" id="button-1-details">
+                <p id="description-1">Description pour le bouton 1</p>
+                <p id="value-1">Valeur associée : 123</p>
+                <img id="image-1" src="" alt="Image 1">
+            </div>
+        </button>
+        <button onclick="showContent(2)">
+            Bouton 2
+            <div class="button-details" id="button-2-details">
+                <p id="description-2">Description pour le bouton 2</p>
+                <p id="value-2">Valeur associée : 456</p>
+                <img id="image-2" src="" alt="Image 2">
+            </div>
+        </button>
+        <button onclick="showContent(3)">
+            Bouton 3
+            <div class="button-details" id="button-3-details">
+                <p id="description-3">Description pour le bouton 3</p>
+                <p id="value-3">Valeur associée : 789</p>
+                <img id="image-3" src="" alt="Image 3">
+            </div>
+        </button>
+        <button onclick="showContent(4)">
+            Bouton 4
+            <div class="button-details" id="button-4-details">
+                <p id="description-4">Description pour le bouton 4</p>
+                <p id="value-4">Valeur associée : 101112</p>
+                <img id="image-4" src="" alt="Image 4">
+            </div>
+        </button>
+    </div>
+
+    <div class="container">
+        <h2>Tableau d'Informations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Titre du Tableau</th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Valeur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Ceci est la première ligne</td><td>123</td></tr>
+                <tr><td>2</td><td>Deuxième ligne d'information</td><td>456</td></tr>
+                <tr><td>3</td><td>Troisième ligne d'exemple</td><td>789</td></tr>
+                <tr><td>4</td><td>Quatrième ligne simple</td><td>101112</td></tr>
+                <tr><td>5</td><td>Cinquième ligne ici</td><td>131415</td></tr>
+                <tr><td>6</td><td>Sixième ligne affichée</td><td>161718</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showContent(buttonId) {
+            // Hide all details first
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`button-${i}-details`).style.display = 'none';
+            }
+
+            // Show the details of the clicked button
+            document.getElementById(`button-${buttonId}-details`).style.display = 'flex';
+
+            // Set the corresponding image, description, and value
+            switch (buttonId) {
+                case 1:
+                    document.getElementById('image-1').src = 'https://via.placeholder.com/600x400/FF5733/FFFFFF?text=Image+1';
+                    break;
+                case 2:
+                    document.getElementById('image-2').src = 'https://via.placeholder.com/600x400/33CFFF/FFFFFF?text=Image+2';
+                    break;
+                case 3:
+                    document.getElementById('image-3').src = 'https://via.placeholder.com/600x400/9C33FF/FFFFFF?text=Image+3';
+                    break;
+                case 4:
+                    document.getElementById('image-4').src = 'https://via.placeholder.com/600x400/FF33A1/FFFFFF?text=Image+4';
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
