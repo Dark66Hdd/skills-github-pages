@@ -1,0 +1,30 @@
+.conso {
+	top: 1200px; left: 800px;
+	position: absolute;
+}
+
+.info1 {
+	top: 950px; left: 150px;
+	position: absolute;
+	border-style: solid;
+}
+
+.info2 {
+	top: 1600px; left: 150px;
+	position: absolute;
+	border-style: solid;
+}
+
+.ecopic2 {
+	top: 2200px; left: 500px;
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	border-style: solid;
+}
+
+.ecodescript {
+	top: 2700px; left: 150px;
+	position: absolute;
+	font-size: 30px;
+}

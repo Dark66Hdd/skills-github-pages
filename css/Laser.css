@@ -1,0 +1,25 @@
+/**/
+        button {
+            display: flex;
+            flex-direction: column; /* Aligne les éléments en colonne */
+            align-items: center; /* Centre les éléments */
+            border: 2px solid #4CAF50; /* Bordure verte */
+            background-color: white; /* Couleur de fond blanche */
+            border-radius: 5px; /* Coins arrondis */
+            padding: 10px; /* Espacement interne */
+            cursor: pointer; /* Curseur en forme de main */
+            transition: background-color 0.3s; /* Transition douce pour le survol */
+        }
+
+        button:hover {
+            background-color: #e0f7fa; /* Couleur de fond au survol */
+        }
+
+        svg {
+            margin-bottom: 110px; /* Espace entre l'image et le texte */
+        }
+
+        span {
+            font-weight: bold; /* Met le texte en gras */
+        }
+/**/
